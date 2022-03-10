@@ -1,14 +1,24 @@
-/** @jsxImportSource @emotion/react */
-import { jsx, css } from '@emotion/react'
+import { Global, css } from '@emotion/react';
+import Composition from './components/Composition';
+import NestedSelector from './components/NestedSelector';
+import MediaQuery from './components/MediaQuery';
+import PropsStyle from './components/PropsStyle';
 
-const style = css`
-  color: aqua;
+const globalStyle = css`
+  .global {
+    font-size: 20px;
+    font-weight: bold;
+  }
 `;
 
 function App() {
   return (
     <div>
-      <div css={style}>emotion study</div>
+      <Global styles={globalStyle} />
+      <Composition />
+      <NestedSelector />
+      <MediaQuery />
+      <PropsStyle />
     </div>
   );
 }
